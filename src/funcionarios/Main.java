@@ -17,6 +17,9 @@ public class Main {
 		company.addEmp(Emp3);
 		company.addEmp(Emp4);
 
+		//a
+		//b
+		//c
 		
 		//displays the employees
 		company.employeeInfo();
