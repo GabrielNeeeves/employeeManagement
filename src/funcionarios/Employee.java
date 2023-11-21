@@ -1,5 +1,7 @@
 package funcionarios;
 
+import java.util.Scanner;
+
 public class Employee {
 
 	private int id;
@@ -52,19 +54,22 @@ public class Employee {
 	public double getCommission() {
 		return this.commission;
 	}
-	
-	//Calculate total SALARY
-	public void totalSalary(double com) {
-		commission = salary*com + salary;
-		System.out.println("Salary with an increase of 15%: "+commission);
-	}
 
+	// Método estático para criar um novo Employee a partir da entrada do usuário
+    public static Employee createEmployee(Scanner scanner) {
+        System.out.println("Insert employee ID: ");
+        int empId = scanner.nextInt();
 
-	
-	/*Display employees information
-	public void empInfo() {
-		System.out.printf("Employee ID - %d, Employee name - '%C', Salary - R$%f, Commission - R$%f"
-						   ,id, name, salary, commission);
-	}*/
+        System.out.println("Type the employee name: ");
+        String empName = scanner.next();
+
+        System.out.println("Define employee salary: R$");
+        double empSalary = scanner.nextDouble();
+
+        System.out.println("Employee commission -> % ");
+        double empCommission = scanner.nextDouble();
+
+        return new Employee(empId, empName, empSalary, empCommission);
+    }
 
 }
